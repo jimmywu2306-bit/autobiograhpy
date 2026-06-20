@@ -366,7 +366,29 @@ function prevPage(){
     render();
   }
 }
+function goToPage(){
 
+  let target = prompt(
+    "Go to page:",
+    pageNum
+  );
+
+  if(!target) return;
+
+  target=parseInt(target);
+
+  if(
+    target>=1 &&
+    target<=pdfDoc.numPages
+  ){
+
+    pageNum=target;
+
+    render();
+
+  }
+
+}
 function zoomIn(){
 
   scale =

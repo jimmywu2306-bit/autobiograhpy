@@ -200,17 +200,39 @@ canvas{
 
 <div class="bottombar">
 
-  <button class="btn" onclick="prevPage()">Prev</button>
 
-  <button class="btn" onclick="zoomOut()">−</button>
+  <button class="btn" onclick="prevPage()">
+    ◀ Prev
+  </button>
 
-  <span class="page-info" id="pageInfo">— / —</span>
 
-  <button class="btn" onclick="zoomIn()">+</button>
+  <span class="page-info" id="pageInfo">
+    — / —
+  </span>
 
-  <button class="btn" onclick="bookmarkPage()">🔖 Bookmark</button>
 
-  <button class="btn" onclick="nextPage()">Next</button>
+  <button class="btn" onclick="nextPage()">
+    Next ▶
+  </button>
+
+
+  <button class="btn" onclick="goToPage()">
+    📄 Page
+  </button>
+
+
+  <div class="divider-space"></div>
+
+
+  <button class="btn btn-icon" onclick="zoomOut()">
+    −
+  </button>
+
+
+  <button class="btn btn-icon" onclick="zoomIn()">
+    +
+  </button>
+
 
 </div>
 

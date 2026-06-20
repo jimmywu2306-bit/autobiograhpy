@@ -368,26 +368,37 @@ function prevPage(){
 }
 function goToPage(){
 
-  let target = prompt(
-    "Go to page:",
-    pageNum
-  );
+  if(!pdfDoc) return;
 
-  if(!target) return;
+  let target =
+    prompt(
+      "Enter page number (1 - " + pdfDoc.numPages + ")",
+      pageNum
+    );
 
-  target=parseInt(target);
+  if(target === null) return;
+
+  target = parseInt(target);
 
   if(
-    target>=1 &&
-    target<=pdfDoc.numPages
+    isNaN(target) ||
+    target < 1 ||
+    target > pdfDoc.numPages
   ){
 
-    pageNum=target;
+    showToast("Invalid page number");
 
-    render();
-
+    return;
   }
 
+
+  pageNum = target;
+
+  render();
+
+  showToast(
+    "Go to page " + pageNum
+  );
 }
 function zoomIn(){
 
